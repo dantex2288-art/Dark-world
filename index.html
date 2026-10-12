@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Dark World؛ دانشنامه بازی‌ها، راهنمای مراحل، آیتم‌ها، تجهیزات و رازهای مخفی.">
+<title>DARK WORLD | دنیای تاریک</title>
+<style>
+:root{--bg:#080808;--panel:#121212;--panel2:#181818;--red:#ff3030;--text:#f5f5f5;--muted:#a0a0a0;--border:#292929}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,sans-serif;line-height:1.85}
+a{color:inherit}button,input,select{font:inherit}
+header{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 7%;background:#080808f2;border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.logo{color:var(--red);font-size:20px;font-weight:900;letter-spacing:1px;text-decoration:none;white-space:nowrap}
+nav{display:flex;flex-wrap:wrap;gap:15px}nav a{color:#ccc;font-size:13px;text-decoration:none}nav a:hover{color:var(--red)}
+.hero{min-height:65vh;padding:75px 9%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;background:radial-gradient(ellipse at 75% 40%,#52131366,transparent 50%),linear-gradient(135deg,#111,#080808 65%);border-bottom:1px solid var(--border)}
+.tag,.section-label{color:var(--red);font-size:12px;letter-spacing:2px;direction:ltr}
+h1{margin:18px 0;font-size:clamp(38px,8vw,76px);line-height:1.4}h1 span{color:var(--red)}
+.hero p{max-width:650px;color:var(--muted)}
+.btn,.button{display:inline-block;margin-top:14px;padding:10px 18px;border:1px solid var(--red);border-radius:7px;background:var(--red);color:white;font-weight:bold;text-decoration:none;cursor:pointer}
+.btn:hover,.button:hover{background:transparent}
+section.content{padding:58px 8%;scroll-margin-top:80px}h2{margin:5px 0 22px;font-size:clamp(25px,5vw,36px)}
+.about-box,.contact-box{padding:25px;border:1px solid var(--border);border-right:3px solid var(--red);border-radius:10px;background:var(--panel)}
+.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card{padding:22px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(145deg,#171717,#0e0e0e);transition:.2s}
+.card:hover{border-color:var(--red);transform:translateY(-4px)}
+.card h3{margin:8px 0}.card p{color:var(--muted);font-size:14px;margin:0}
+.game-mark{width:100%;height:145px;object-fit:cover;border-radius:8px;background:#222;border:1px solid #333}
+.card .button{width:100%;text-align:center}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+input,select{background:#101010;color:var(--text);border:1px solid #383838;border-radius:8px;padding:11px;min-width:0}
+input{flex:1;min-width:190px}
+.hidden{display:none!important}
+#detail{border-top:1px solid var(--border);background:linear-gradient(180deg,#0c0c0c,#080808);min-height:55vh}
+.detail-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.back{background:#191919;border:1px solid #444;border-radius:7px;padding:9px 14px;color:white;cursor:pointer}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.tab{background:#171717;border:1px solid #363636;color:#ddd;border-radius:8px;padding:9px 13px;cursor:pointer}
+.tab[aria-selected=true]{background:#351111;border-color:var(--red);color:white}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.info-card{border:1px solid var(--border);border-radius:10px;background:var(--panel);padding:16px;min-width:0}
+.info-card h3{margin:5px 0 8px}.info-card p{margin:0;color:#c3c3c3;font-size:14px}
+.item-row{display:flex;align-items:flex-start;gap:14px}
+.item-img{width:92px;height:92px;flex:0 0 92px;object-fit:contain;border:1px solid #383838;border-radius:9px;background:#080808;padding:5px}
+.item-img.wide{width:112px;height:92px;flex-basis:112px;object-fit:cover}
+.image-note{font-size:11px;color:#888;margin-top:8px}
+.pill{display:inline-block;font-size:11px;color:#ff8a8a;border:1px solid #5c2929;border-radius:20px;padding:2px 8px;margin-bottom:7px}
+.notice{border:1px solid #4a3030;background:#1b1010;padding:13px 15px;border-radius:9px;color:#e6caca;margin:16px 0}
+.empty{border:1px dashed #444;padding:22px;border-radius:10px;color:var(--muted)}
+footer{padding:25px 15px;border-top:1px solid var(--border);color:#777;font-size:12px;text-align:center}footer span{color:var(--red)}
+@media(max-width:520px){header{padding:13px 5%;align-items:flex-start;flex-direction:column}nav{gap:13px}.hero{min-height:58vh;padding:55px 7%}section.content{padding:42px 6%}.cards{grid-template-columns:1fr}.item-img{width:76px;height:76px;flex-basis:76px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#home">DARK WORLD</a>
+<nav aria-label="منوی اصلی"><a href="#home">خانه</a><a href="#about">درباره من</a><a href="#games">بازی‌ها</a><a href="#contact">تماس</a></nav>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="tag">WELCOME TO MY WORLD</div>
+<h1>قوانین خودت رو<br><span>بساز.</span></h1>
+<p>به دنیای من خوش اومدی؛ دانشنامه‌ای برای بازی‌های اکشن، راهنمای مراحل، آیتم‌ها، تجهیزات، رازها و نکته‌هایی که تجربه‌ی بازی رو بهتر می‌کنن.</p>
+<a class="btn" href="#games">ورود به دانشنامه ←</a>
+</section>
+<section class="content" id="about">
+<div class="section-label">WHO AM I?</div><h2>درباره دنیای من</h2>
+<div class="about-box"><p>اینجا فضای شخصی منه؛ جایی برای بازی، تکنولوژی و یادگیری. Dark World به‌مرور با راهنماهای دقیق‌تر و تصاویر واقعی داخل بازی گسترش پیدا می‌کنه.</p></div>
+</section>
+<section class="content" id="games">
+<div class="section-label">GAME DATABASE</div><h2>دانشنامه بازی‌ها</h2>
+<p class="muted">یک بازی رو انتخاب کن تا راهنماها، تجهیزات، شخصیت‌ها و رازهای مخصوص همون بازی رو ببینی.</p>
+<div class="toolbar"><input id="gameSearch" type="search" placeholder="جست‌وجوی بازی..." aria-label="جست‌وجوی بازی"></div>
+<div class="cards" id="gameCards">
+<article class="card game-card" data-search="resident evil رزیدنت اویل ترس بقا">
+<img class="game-mark" src="images/resident-evil/cover.jpg" alt="تصویر Resident Evil" onerror="this.style.display='none'">
+<h3>Resident Evil</h3><p>بقا، داستان، شخصیت‌ها، سلاح‌ها، معماها و باس‌فایت‌ها.</p><button class="button" onclick="openGame('re')">باز کردن دانشنامه</button>
+</article>
+<article class="card game-card" data-search="call of duty کالاف دیوتی زامبی جنگ">
+<img class="game-mark" src="images/call-of-duty/cover.jpg" alt="تصویر Call of Duty" onerror="this.style.display='none'">
+<h3>Call of Duty</h3><p>کمپین، سلاح‌ها، اتچمنت‌ها، زامبی‌ها و ایستراگ‌ها.</p><button class="button" onclick="openGame('cod')">باز کردن دانشنامه</button>
+</article>
+<article class="card game-card" data-search="cyberpunk 2077 سایبرپانک">
+<img class="game-mark" src="images/cyberpunk/cover.jpg" alt="تصویر Cyberpunk 2077" onerror="this.style.display='none'">
+<h3>Cyberpunk 2077</h3><p>مأموریت‌ها، شخصیت‌ها، سایبرور، سلاح‌ها و پایان‌ها.</p><button class="button" onclick="openGame('cp')">باز کردن دانشنامه</button>
+</article>
+<article class="card game-card" data-search="minecraft ماینکرفت ساخت بقا">
+<img class="game-mark" src="images/minecraft/cover.jpg" alt="تصویر Minecraft" onerror="this.style.display='none'">
+<h3>Minecraft</h3><p>آیتم‌ها، موجودات، انچنت‌ها، بایوم‌ها، ردستون و نسخه‌ها.</p><button class="button" onclick="openGame('mc')">باز کردن دانشنامه</button>
+</article>
+</div>
+</section>
+<section class="content hidden" id="detail" aria-live="polite">
+<div class="detail-top"><div><div class="section-label">DARK WORLD DATABASE</div><h2 id="gameTitle">دانشنامه</h2><p id="gameIntro" class="muted"></p></div><button class="back" onclick="closeGame()">← بازگشت به بازی‌ها</button></div>
+<div class="tabs" id="tabs" role="tablist"></div>
+<div id="detailContent"></div>
+</section>
+<section class="content" id="contact"><div class="section-label">GET IN TOUCH</div><h2>ارتباط با من</h2><div class="contact-box"><h3>به دنیای من سر زدی؛ ممنون! 🖤</h3><p class="muted">این بخش بعداً می‌تونه لینک شبکه‌های اجتماعی یا راه ارتباطی من رو داشته باشه.</p><a class="btn" href="#home">بازگشت به بالا ↑</a></div></section>
+</main>
+<footer>ساخته‌شده با <span>♥</span> و کمی کدنویسی<br>© DARK WORLD</footer>
+<script>
+const DB = {
+re:{title:"Resident Evil",intro:"دانشنامه‌ی مجموعه‌ی Resident Evil؛ راهنماهای بقا، داستان، تجهیزات و دشمنان.",tabs:{
+"overview":{label:"معرفی",cards:[
+["شروع کار","برای شروع، منابع درمانی و مهمات را بی‌دلیل مصرف نکن. محیط‌ها را با دقت بگرد و اسناد را بخوان؛ خیلی از سرنخ‌ها در یادداشت‌ها و جزئیات محیط پنهان‌اند.",""],
+["مدیریت منابع","قبل از درگیری، مسیر فرار و مقدار مهماتت را بررسی کن. همیشه لازم نیست همه‌ی دشمن‌ها را بکشی؛ گاهی عبور مخفیانه یا عقب‌نشینی انتخاب بهتری است.",""],
+["نسخه‌ها","این مجموعه نسخه‌های اصلی، بازسازی‌ها و بازی‌های فرعی دارد. راهنما باید با نسخه‌ی مشخص بازی تطبیق داده شود، چون نقشه، معما و محل آیتم‌ها ممکن است فرق کند.",""]]},
+"items":{label:"آیتم‌ها",cards:[
+["گیاه سبز (Green Herb)","برای بازیابی سلامتی استفاده می‌شود. در صورت امکان، ترکیب گیاه‌ها را طبق قوانین همان نسخه بررسی کن.","images/resident-evil/green-herb.png","تصویر واقعی آیتم داخل بازی را در این مسیر قرار بده."],
+["اسپری کمک‌های اولیه","در نسخه‌هایی که وجود دارد، برای درمان سریع استفاده می‌شود. مقدار و اثر دقیق آن به نسخه بستگی دارد.","images/resident-evil/first-aid-spray.png",""],
+["مهمات","نوع مهمات با سلاح هماهنگ است؛ مهمات کمیاب را برای دشمنان سخت‌تر نگه دار.","images/resident-evil/ammo.png",""]]},
+"weapons":{label:"سلاح‌ها",cards:[
+["چاقو","برای دفاع اضطراری، شکستن بعضی موانع یا صرفه‌جویی در مهمات کاربرد دارد؛ دوام و کاربرد آن بین نسخه‌ها متفاوت است.","images/resident-evil/knife.png",""],
+["Handgun","سلاح همه‌کاره برای دشمنان معمولی. شلیک دقیق و هدف‌گیری نقاط ضعف می‌تواند مهمات را حفظ کند.","images/resident-evil/handgun.png",""],
+["Shotgun","در فاصله‌ی نزدیک معمولاً قدرت توقف خوبی دارد؛ مهماتش را برای موقعیت‌های خطرناک نگه دار.","images/resident-evil/shotgun.png",""]]},
+"walkthrough":{label:"راهنمای مراحل",cards:[
+["بررسی محیط","اتاق‌ها را کامل بگرد؛ کشوها، قفسه‌ها و گوشه‌های تاریک ممکن است آیتم یا سرنخ داشته باشند.",""],
+["حل معماها","یادداشت‌ها، نمادها و ترتیب‌های دیده‌شده در محیط را ثبت کن. جواب دقیق هر معما به نسخه و درجه‌ی سختی وابسته است.",""],
+["باس‌فایت‌ها","پیش از شروع مبارزه مهمات و درمان را بررسی کن، فاصله را حفظ کن و الگوی حمله‌ی دشمن را یاد بگیر.",""]]},
+"secrets":{label:"رازها و نکات",cards:[
+["اسناد و فایل‌ها","اسناد را بخوان؛ گاهی سرنخ داستانی یا راه‌حل معما در آن‌هاست.",""],
+["مدیریت موجودی","آیتم‌های غیرضروری را در صندوق ذخیره کن، اگر نسخه چنین قابلیتی دارد.",""],
+["هشدار اسپویلر","راهنمای پایان‌ها و رویدادهای داستانی می‌تواند داستان را لو بدهد؛ بهتر است قبل از خواندن، بخش موردنظر را انتخاب کنی.",""]]}
+}},
+cod:{title:"Call of Duty",intro:"راهنمای کمپین، سلاح‌ها، تجهیزات، حالت زامبی و رازهای نسخه‌های مختلف.",tabs:{
+"overview":{label:"معرفی",cards:[
+["انتخاب نسخه","Call of Duty مجموعه‌ای بزرگ است؛ مأموریت‌ها و سیستم‌ها بین Modern Warfare، Black Ops و نسخه‌های دیگر تفاوت دارند.",""],
+["کمپین","هدف مأموریت را از بخش Objectives بررسی کن و پیش از حرکت، تجهیزات مناسب محیط را بردار.",""],
+["حالت‌های بازی","کمپین، چندنفره و زامبی در همه‌ی نسخه‌ها یکسان نیستند؛ راهنمای دقیق باید نام نسخه و حالت را مشخص کند.",""]]},
+"items":{label:"تجهیزات",cards:[
+["Armor Plate","در نسخه‌هایی که زره قابل‌مصرف دارند، برای جبران زره ازدست‌رفته استفاده می‌شود؛ این آیتم در همه‌ی نسخه‌ها وجود ندارد.","images/call-of-duty/armor-plate.png",""],
+["Frag Grenade","نارنجک تکه‌تکه‌شونده برای پاک‌سازی موقعیت‌ها؛ زمان پرتاب و فاصله‌ی امن را در نظر بگیر.","images/call-of-duty/frag-grenade.png",""],
+["Stim","در نسخه‌هایی که وجود دارد، برای بازیابی سریع‌تر یا کمک به بقا کاربرد دارد؛ عملکردش وابسته به بازی است.","images/call-of-duty/stim.png",""]]},
+"weapons":{label:"سلاح‌ها",cards:[
+["Assault Rifle","سلاحی متعادل برای درگیری‌های میان‌برد. اتچمنت‌ها را با توجه به لگد، سرعت نشانه‌گیری و نقشه انتخاب کن.","images/call-of-duty/assault-rifle.png",""],
+["SMG","برای حرکت سریع و نبرد نزدیک مناسب است؛ در فاصله‌های دورتر معمولاً کنترل بیشتری لازم دارد.","images/call-of-duty/smg.png",""],
+["Sniper Rifle","برای درگیری دوربرد؛ جای امن و مسیر خروج مهم‌اند. آمار دقیق هر سلاح با نسخه فرق می‌کند.","images/call-of-duty/sniper-rifle.png",""]]},
+"walkthrough":{label:"راهنمای مراحل",cards:[
+["اهداف مأموریت","نشانگرهای هدف را دنبال کن و قبل از عبور از نقطه‌ی بدون بازگشت، محیط اطراف را بررسی کن.",""],
+["انتخاب تجهیزات","برای محیط بسته، سلاح مناسب فاصله‌ی نزدیک و برای فضای باز تجهیزات دوربرد را در نظر بگیر.",""],
+["نکته‌ی تاکتیکی","از پوشش محیط استفاده کن و بی‌محابا وارد چند خط آتش نشو.",""]]},
+"secrets":{label:"زامبی و رازها",cards:[
+["زامبی‌ها","در نسخه‌هایی که حالت Zombies دارند، منابع، مهمات و مسیر فرار را مدیریت کن.",""],
+["Easter Egg","مراحل ایستراگ به نقشه و نسخه‌ی دقیق وابسته است؛ نام نقشه را پیش از دنبال‌کردن راهنما بررسی کن.",""],
+["ارتقای سلاح","در نسخه‌های دارای سیستم ارتقا، هزینه و زمان ارتقا را با نیاز گروه هماهنگ کن.",""]]}
+}},
+cp:{title:"Cyberpunk 2077",intro:"راهنمای Night City؛ مأموریت‌ها، سایبرور، سلاح‌ها، شخصیت‌ها و انتخاب‌های داستانی.",tabs:{
+"overview":{label:"شروع بازی",cards:[
+["ساخت شخصیت","ویژگی‌ها و سبک بازی را با هم هماهنگ کن؛ می‌توانی روی سلاح گرم، مخفی‌کاری، هک یا مبارزه‌ی نزدیک تمرکز کنی.",""],
+["کاوش شهر","فعالیت‌های جانبی، فروشندگان و نقاط سفر سریع را کشف کن؛ همه‌ی محتوا فقط در مأموریت‌های اصلی نیست.",""],
+["انتخاب‌های داستانی","بعضی تصمیم‌ها روی گفت‌وگوها و نتیجه‌ی مأموریت‌ها اثر می‌گذارند. برای جلوگیری از اسپویل، توضیحات پایان‌ها را جدا نگه دار.",""]]},
+"items":{label:"تجهیزات",cards:[
+["MaxDoc","آیتم درمانی برای بازیابی سلامتی؛ مقدار و نسخه‌ی آن به نسخه و به‌روزرسانی بازی بستگی دارد.","images/cyberpunk/maxdoc.png",""],
+["Grenade","برای واردکردن آسیب یا بیرون‌کشیدن دشمنان از پوشش استفاده می‌شود؛ نوع نارنجک را با موقعیت هماهنگ کن.","images/cyberpunk/grenade.png",""],
+["Quickhack","ابزارهای هک برای مختل‌کردن یا کنترل دشمنان؛ RAM و نوع دشمن روی انتخاب هک اثر دارند.","images/cyberpunk/quickhack.png",""]]},
+"weapons":{label:"سلاح‌ها و سایبرور",cards:[
+["Power Weapons","گلوله‌ها می‌توانند از بعضی سطوح عبور کنند؛ قابلیت دقیق به سلاح و ارتقا بستگی دارد.","images/cyberpunk/power-weapon.png",""],
+["Tech Weapons","برخی سلاح‌های تکنولوژیک با شارژ شلیک می‌کنند و می‌توانند از پوشش عبور کنند.","images/cyberpunk/tech-weapon.png",""],
+["Cyberware","ایمپلنت‌ها قابلیت‌های شخصیت را تغییر می‌دهند؛ ظرفیت و نیازهای بیلد را پیش از خرید بررسی کن.","images/cyberpunk/cyberware.png",""]]},
+"walkthrough":{label:"مأموریت‌ها",cards:[
+["مأموریت اصلی","متن مأموریت و پیام‌ها را بررسی کن؛ برخی مسیرهای فرعی با گفت‌وگو یا انتخاب‌های خاص باز می‌شوند.",""],
+["مأموریت فرعی","تماس‌ها و پیام‌های شخصیت‌ها می‌توانند مأموریت تازه‌ای فعال کنند.",""],
+["آمادگی قبل از نبرد","درمان، مهمات و سایبرور مناسب را بررسی کن و در صورت امکان از محیط برای مخفی‌کاری استفاده کن.",""]]},
+"secrets":{label:"رازها و پایان‌ها",cards:[
+["پایان‌های متفاوت","پایان‌ها می‌توانند به پیشرفت مأموریت‌ها و تصمیم‌های قبلی وابسته باشند؛ جزئیات کامل اسپویل دارند.",""],
+["آیتم‌های خاص","بعضی سلاح‌ها و تجهیزات خاص از مأموریت‌ها یا مکان‌های مشخص به دست می‌آیند.",""],
+["نکته‌ی کاوش","پشت‌بام‌ها، کوچه‌ها و ساختمان‌های فرعی را بررسی کن؛ همه‌ی مسیرها روی خیابان اصلی نیستند.",""]]}
+}},
+mc:{title:"Minecraft Java Edition",intro:"دانشنامه‌ی Minecraft؛ آیتم‌ها، بلاک‌ها، موجودات، ساخت‌وساز، انچنت‌ها و تفاوت نسخه‌ها.",tabs:{
+"overview":{label:"شروع بقا",cards:[
+["روز اول","چوب جمع کن، میز ساخت بساز، ابزار اولیه تهیه کن و قبل از شب سرپناهی امن بساز.",""],
+["پیشرفت","سنگ، آهن و سپس منابع پیشرفته‌تر را جمع‌آوری کن. برای کاوش طولانی غذا و ابزار اضافی همراه داشته باش.",""],
+["نسخه‌ها","رفتار موجودات، دستورها و بعضی آیتم‌ها ممکن است بین نسخه‌های Java متفاوت باشند؛ نسخه‌ی دقیق را یادداشت کن.",""]]},
+"items":{label:"آیتم‌ها",cards:[
+["Diamond","برای ساخت ابزار، زره و تجهیزات قدرتمند استفاده می‌شود. معمولاً در عمق‌های مناسب معدن‌یابی و با کلنگ مناسب استخراج می‌شود.","images/minecraft/diamond.png",""],
+["Golden Apple","برای اثرهای تقویتی و بازیابی در موقعیت‌های خطرناک کاربرد دارد؛ اثرها به نسخه بستگی دارند.","images/minecraft/golden-apple.png",""],
+["Totem of Undying","اگر در دست اصلی یا دست فرعی باشد، در شرایط مرگبار می‌تواند از مرگ جلوگیری کند و اثرهای مشخصی بدهد.","images/minecraft/totem.png",""]]},
+"blocks":{label:"بلاک‌ها و ساخت",cards:[
+["Crafting Table","برای ساخت بسیاری از دستورهای ۳×۳ استفاده می‌شود؛ از اولین ابزارهای مهم ابتدای بقاست.","images/minecraft/crafting-table.png",""],
+["Furnace","برای ذوب سنگ معدن و پخت غذا به سوخت نیاز دارد.","images/minecraft/furnace.png",""],
+["Enchanting Table","برای انچنت‌کردن ابزار و زره استفاده می‌شود؛ قفسه‌های کتاب می‌توانند گزینه‌های در دسترس را بهبود دهند.","images/minecraft/enchanting-table.png",""]]},
+"mobs":{label:"موجودات",cards:[
+["Creeper","نزدیک‌شدنش خطرناک است و انفجار می‌تواند به بازیکن و محیط آسیب بزند؛ فاصله را حفظ کن.","images/minecraft/creeper.png",""],
+["Enderman","وقتی تحریک شود خطرناک است؛ نگاه مستقیم به چشم‌ها می‌تواند باعث حمله شود.","images/minecraft/enderman.png",""],
+["Villager","با شغل و میز کار مناسب می‌تواند معامله‌های متفاوتی ارائه دهد.","images/minecraft/villager.png",""]]},
+"secrets":{label:"نکات و رازها",cards:[
+["مختصات","مختصات را برای پیدا کردن مسیر بازگشت و ثبت مکان پایگاه یادداشت کن.",""],
+["Nether","بدون زره، غذا و برنامه‌ی خروج وارد Nether نشو؛ مسیر پورتال را ایمن نگه دار.",""],
+["Redstone","مدارهای ساده را با اهرم، رداستون و پیستون شروع کن و سپس سراغ سازوکارهای پیچیده‌تر برو.",""]]}
+}}
+};
+const detail=document.getElementById('detail'), titleEl=document.getElementById('gameTitle'), introEl=document.getElementById('gameIntro'), tabsEl=document.getElementById('tabs'), contentEl=document.getElementById('detailContent');
+let currentGame='';
+function openGame(id){
+ const game=DB[id]; if(!game)return; currentGame=id; titleEl.textContent=game.title;introEl.textContent=game.intro;
+ tabsEl.innerHTML='';contentEl.innerHTML='';
+ Object.entries(game.tabs).forEach(([key,tab],i)=>{const b=document.createElement('button');b.className='tab';b.textContent=tab.label;b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');b.onclick=()=>showTab(key);b.dataset.key=key;tabsEl.appendChild(b)});
+ detail.classList.remove('hidden');showTab(Object.keys(game.tabs)[0]);history.replaceState(null,'','#'+id);detail.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showTab(key){
+ const tab=DB[currentGame].tabs[key];if(!tab)return;
+ [...tabsEl.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.key===key?'true':'false'));
+ contentEl.innerHTML='';
+ const grid=document.createElement('div');grid.className='article-grid';
+ tab.cards.forEach(card=>{
+  const article=document.createElement('article');article.className='info-card';
+  const hasImage=!!card[2];
+  if(hasImage){
+   const row=document.createElement('div');row.className='item-row';
+   const img=document.createElement('img');img.className='item-img';img.src=card[2];img.alt='تصویر داخل بازی: '+card[0];img.loading='lazy';
+   img.onerror=function(){this.style.display='none';const note=document.createElement('div');note.className='image-note';note.textContent='تصویر هنوز اضافه نشده: '+card[2];this.parentElement.appendChild(note)};
+   row.appendChild(img);
+   const textBox=document.createElement('div');const h=document.createElement('h3');h.textContent=card[0];const p=document.createElement('p');p.textContent=card[1];textBox.append(h,p);row.appendChild(textBox);article.appendChild(row);
+   if(card[3]){const note=document.createElement('div');note.className='image-note';note.textContent=card[3];article.appendChild(note)}
+  }else{const h=document.createElement('h3');h.textContent=card[0];const p=document.createElement('p');p.textContent=card[1];article.append(h,p)}
+  grid.appendChild(article);
+ });
+ contentEl.appendChild(grid);
+ const note=document.createElement('div');note.className='notice';note.textContent='تصاویر آیتم‌ها باید از فایل‌های واقعی داخل بازی باشند؛ این دانشنامه از شکلک به‌جای تصویر آیتم استفاده نمی‌کند. برای افزودن تصویر، فایل را در مسیر نوشته‌شده زیر همان آیتم قرار بده.';contentEl.appendChild(note);
+}
+function closeGame(){detail.classList.add('hidden');history.replaceState(null,'',location.pathname+location.search);document.getElementById('games').scrollIntoView({behavior:'smooth'});}
+document.getElementById('gameSearch').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();document.querySelectorAll('.game-card').forEach(c=>c.classList.toggle('hidden',!c.dataset.search.toLowerCase().includes(q)))});
+</script>
+</body>
+</html>
